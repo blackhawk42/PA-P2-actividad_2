@@ -8,16 +8,21 @@ int count_lines(char *path) {
     }
 
     int count = 0;
+
+    char last_char = EOF;
     char c;
 
     while( (c = fgetc(f)) != EOF ){
         if (c == '\n') {
             count++;
         }
+
+        last_char = c;
     }
 
-    // If there was data, but no first newline, add that lonely line
-    if(ftell(f) > 0 && count == 0) {
+    // If the last char was not a newline, but neither was it an immediate EOF, count
+    // it as a line
+    if(last_char != EOF && last_char != '\n') {
         count++;
     }
 
