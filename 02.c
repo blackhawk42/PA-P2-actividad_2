@@ -37,11 +37,11 @@ int main(int argc, char const *argv[]) {
     for(int i = 1; i < argc; i++) {
         count = count_char_in_file((char *)argv[i], c);
         if (count < 0) {
-            fprintf(stderr, "error: %s", count, argv[i]);
+            fprintf(stderr, "error: %s\n", count, argv[i]);
             continue;
         }
 
-        printf("%d %s", count, argv[i]);
+        printf("%d %s\n", count, argv[i]);
     }
 
     return 0;
