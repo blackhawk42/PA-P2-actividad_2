@@ -20,6 +20,8 @@ int count_lines(char *path) {
         last_char = c;
     }
 
+    fclose(f);
+
     // If the last char was not a newline, but neither was it an immediate EOF, count
     // it as a line
     if(last_char != EOF && last_char != '\n') {
