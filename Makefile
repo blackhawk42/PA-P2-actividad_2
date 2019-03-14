@@ -8,10 +8,12 @@ SOURCES=$(wildcard *.c)
 MARKDOWNS=$(wildcard *.md)
 
 TEXTSDIR=texts/
+TEXTS=$(wildcard texts/*)
+UTILSDIR=utils/
 
 README=README.md
 
-.PHONY: all dist clean run
+.PHONY: all dist clean run unix2windows windows2unix
 
 all: 02.exe 03.exe 04.exe 05.exe
 
@@ -31,8 +33,14 @@ all: 02.exe 03.exe 04.exe 05.exe
 $(DISTDIR):
 	mkdir $@
 
-dist: $(SOURCES) $(MARKDOWNS) Makefile | $(DISTDIR) $(TEXTSDIR)
-	zip -r $(DISTDIR)$(ZIPFILE) $(SOURCES) $(MARKDOWNS) $(TEXTSDIR) Makefile
+dist: $(SOURCES) $(MARKDOWNS) Makefile $(TEXTSDIR) $(UTILSDIR) | $(DISTDIR)
+	zip -r $(DISTDIR)$(ZIPFILE) $(SOURCES) $(MARKDOWNS) $(TEXTSDIR) $(UTILSDIR) Makefile
+
+unix2windows:
+	python utils/lines.py -w $(TEXTS)
+
+windows2unix:
+	python utils/lines.py -u $(TEXTS)
 
 clean:
 	rm -rf *.exe *.o dists/*
