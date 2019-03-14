@@ -28,8 +28,6 @@ WcReport pseudo_wc(char *path) {
             report->words++;
         }
 
-        //printf("c = %c, isspace = %d, lastchar = %c, !isspace = %d\n", c, isspace(c), last_char, !isspace(last_char));
-
         last_char = c;
 
     }
