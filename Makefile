@@ -11,7 +11,7 @@ README=README.md
 
 .PHONY: all dist clean run
 
-all: 02.exe 03.exe 04.exe
+all: 02.exe 03.exe 04.exe 05.exe
 
 02.exe: 02.c
 	$(CC) $(CFLAGS) -o $@ $<
@@ -20,6 +20,9 @@ all: 02.exe 03.exe 04.exe
 	$(CC) $(CFLAGS) -o $@ $<
 
 04.exe: 04.c
+	$(CC) $(CFLAGS) -o $@ $<
+
+05.exe: 05.c
 	$(CC) $(CFLAGS) -o $@ $<
 
 
