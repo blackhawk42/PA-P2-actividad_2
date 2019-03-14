@@ -2,7 +2,7 @@ CC=gcc
 CFLAGS=
 
 DISTDIR=dists/
-ZIPFILE=actividad_2.zip
+ZIPFILE=actividad_3.zip
 
 SOURCES=$(wildcard *.c)
 MARKDOWNS=$(wildcard *.md)
