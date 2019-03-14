@@ -15,7 +15,7 @@ README=README.md
 
 .PHONY: all dist clean run unix2windows windows2unix
 
-all: 02.exe 03.exe 04.exe 05.exe 07.exe
+all: 02.exe 03.exe 04.exe 05.exe 06.exe 07.exe
 
 02.exe: 02.c
 	$(CC) $(CFLAGS) -o $@ $<
@@ -27,6 +27,9 @@ all: 02.exe 03.exe 04.exe 05.exe 07.exe
 	$(CC) $(CFLAGS) -o $@ $<
 
 05.exe: 05.c
+	$(CC) $(CFLAGS) -o $@ $<
+
+06.exe: 06.c
 	$(CC) $(CFLAGS) -o $@ $<
 
 07.exe: 07.c
