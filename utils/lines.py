@@ -2,10 +2,10 @@ import sys
 import getopt
 
 def print_help():
-    print("use: {} [-w|u] FILE [FILEN..]".format(sys.argv[0]), file=sys.stderr)
+    print("use: {} [-w|u] FILE [FILE..]".format(sys.argv[0]), file=sys.stderr)
     print("use: {} -h".format(sys.argv[0]), file=sys.stderr)
     print("Change line endings from Unix (\\n) to Windows style (\\r\\n) and viceversa", file=sys.stderr)
-    print("\t-w, -u\tWindows or Unix line ends. Default is to convert to Windows-style endings.", file=sys.stderr)
+    print("\t-w, -u\tRespectively, convert to Windows or Unix line ends. Default is to convert to Windows-style endings.", file=sys.stderr)
 
 
 def unix2windows(data):
