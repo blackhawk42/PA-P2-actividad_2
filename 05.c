@@ -60,6 +60,8 @@ int main(int argc, char const *argv[]) {
         }
 
         printf("%d %d %s\n", report->words, report->chars, argv[i]);
+
+        free(report);
     }
 
     return 0;
