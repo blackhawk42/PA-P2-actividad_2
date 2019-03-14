@@ -7,6 +7,8 @@ ZIPFILE=actividad_2.zip
 SOURCES=$(wildcard *.c)
 MARKDOWNS=$(wildcard *.md)
 
+TEXTSDIR=texts/
+
 README=README.md
 
 .PHONY: all dist clean run
@@ -29,8 +31,8 @@ all: 02.exe 03.exe 04.exe 05.exe
 $(DISTDIR):
 	mkdir $@
 
-dist: $(SOURCES) $(MARKDOWNS) Makefile | $(DISTDIR)
-	zip $(DISTDIR)$(ZIPFILE) $(SOURCES) $(MARKDOWNS) Makefile
+dist: $(SOURCES) $(MARKDOWNS) Makefile | $(DISTDIR) $(TEXTSDIR)
+	zip -r $(DISTDIR)$(ZIPFILE) $(SOURCES) $(MARKDOWNS) $(TEXTSDIR) Makefile
 
 clean:
 	rm -rf *.exe *.o dists/*
