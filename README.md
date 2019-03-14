@@ -1,5 +1,5 @@
-# PA-P2-actividad_2
-Programación Avanzada - Parcial 2: Actividad 2
+# PA-P2-actividad_3
+Programación Avanzada - Parcial 2: Actividad 3
 
 Preguntas:
 
