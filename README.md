@@ -138,3 +138,35 @@ Example:
 wordtwo wordsFor sale:
 baby shoes, never worn.
 ```
+
+# Test files
+
+For convenience, a collection of test text files was included in the ```texts```
+directory. The results given in my examples are the ones I obtained in my
+enviroment.
+
+The files have Unix-style line terminations (LF). For some esoteric reason probably
+having to do with my enviroment, my programs gave me weird results when fed files
+with Windows-style line terminations (CRLF).
+
+Line terminations can be transformed by applying the common ```unix2dos``` and ```dos2unix```
+Unix command-line utilities to the files. In case you don't posses them or know
+how to use them, I've created a very simple Python clone of both
+utilities: ```lines.py```, inside the ```utils``` directory.
+
+```lines.py``` is a standalone utility runnable in a modern Python interpreter
+(tested in version 3.7.0). Feel free to use it if you find it useful. Usage
+instructions printed by invoking the script without arguments.
+
+If you have GNU Make installed, you can convert all test files to Windows-style
+line endings, using my script, with:
+
+```
+make unix2windows
+```
+
+and viceversa with:
+
+```
+make windows2unix
+```
